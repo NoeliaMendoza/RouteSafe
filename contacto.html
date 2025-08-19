@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - SafeRoute</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        background: #f7fafc;
+      }
+
+      /* Navegación */
+      .header {
+        background: #254b5e;
+        color: white;
+        padding: 20px 0;
+      }
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+      }
+      .login-btn {
+        background: #546eab;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+      }
+
+      /* Sección Contacto */
+      section#contacto {
+        padding: 60px 20px;
+        background: #f7fafc;
+        color: #254b5e;
+      }
+
+      .contact-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+      }
+
+      /* Bloque informativo */
+      .contact-info h3 {
+        color: #254b5e;
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+      .contact-info p {
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .contact-info ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .contact-info li {
+        color: #4697b4;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 16px;
+      }
+
+      /* Formulario */
+      .contact-form {
+        flex: 1;
+        min-width: 300px;
+        background: #254b5e;
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+
+      .contact-form h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #abc8e6;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        padding: 16px 12px;
+        border: none;
+        border-radius: 12px;
+        outline: none;
+        background: #546eab;
+        color: white;
+        font-size: 16px;
+        transition: 0.3s, box-shadow 0.3s;
+      }
+      .input-group input:focus,
+      .input-group textarea:focus {
+        box-shadow: 0 0 10px #abc8e6;
+        background: #4697b4;
+      }
+      .input-group label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.7);
+        pointer-events: none;
+        transition: 0.3s;
+      }
+      .input-group input:focus + label,
+      .input-group textarea:focus + label,
+      .input-group input:not(:placeholder-shown) + label,
+      .input-group textarea:not(:placeholder-shown) + label {
+        top: -12px;
+        font-size: 12px;
+        color: #abc8e6;
+      }
+
+      .contact-form button {
+        width: 100%;
+        padding: 16px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        background: #abc8e6;
+        color: #254b5e;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .contact-form button:hover {
+        transform: scale(1.05);
+        background: #4697b4;
+        color: white;
+      }
+
+      /* Contacto rápido / WhatsApp y redes */
+      .contact-quick {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+      .contact-quick a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        background: #25d366;
+        color: #fff;
+        padding: 16px 24px;
+        border-radius: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+      .contact-quick a:hover {
+        transform: scale(1.1);
+      }
+      .socials {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .socials a {
+        color: #254b5e;
+        font-size: 26px;
+        transition: transform 0.3s, color 0.3s;
+      }
+      .socials a:hover {
+        color: #4697b4;
+        transform: scale(1.3);
+      }
+
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">SafeRoute</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicio.html">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#login" class="login-btn">Inicio Sesión</a>
+      </nav>
+    </header>
+
+    <section id="contacto">
+      <div class="contact-container">
+        <!-- Bloque informativo breve -->
+        <div class="contact-info">
+          <h3>Tu seguridad, nuestra prioridad</h3>
+          <p>
+            SafeRoute conecta a personas con rutas seguras y alertas en tiempo
+            real. Contáctanos y descubre cómo proteger tus desplazamientos de
+            manera sencilla y confiable.
+          </p>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Rutas seguras</li>
+            <li><i class="fas fa-bell"></i> Alertas instantáneas</li>
+            <li><i class="fas fa-user-check"></i> Control total</li>
+          </ul>
+        </div>
+
+        <!-- Formulario -->
+        <form class="contact-form">
+          <h2>Contáctanos</h2>
+          <div class="input-group">
+            <input type="text" name="name" required placeholder=" " />
+            <label>Nombre</label>
+          </div>
+          <div class="input-group">
+            <input type="email" name="email" required placeholder=" " />
+            <label>Correo electrónico</label>
+          </div>
+          <div class="input-group">
+            <textarea
+              name="message"
+              rows="5"
+              required
+              placeholder=" "
+            ></textarea>
+            <label>Mensaje</label>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Contacto rápido / WhatsApp y redes -->
+        <div class="contact-quick">
+          <a href="https://wa.me/593999999999" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <div class="socials">
+            <p>Síguenos:</p>
+            <a href="https://www.facebook.com/Cristiano"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/cristiano/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://x.com/Cristiano"><i class="fab fa-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
